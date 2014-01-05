@@ -9,6 +9,9 @@ gobaidumap
 go get -u github.com/shajiquan/gobaidumap
 ```
 
+# 注意
+请到百度地图开发者中心申请自己的 App Key，下方的 key 是百度提供的，不保证永远有效。
+
 # 使用
 
 ```go

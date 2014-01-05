@@ -12,6 +12,8 @@ import (
 // 百度地图API IP ： http://developer.baidu.com/map/ip-location-api.htm
 // 百度地图API GEO App Key 申请地址：http://lbsyun.baidu.com/apiconsole/key?application=key
 
+// 注意，请到百度地图开发者中心申请自己的 App Key，下方的 key 是百度提供的，不保证永远有效。
+
 const (
 	AppKey       string = "F454f8a5efe5e577997931cc01de3974" // baidu's
 	reqURLForGEO string = "http://api.map.baidu.com/geocoder/v2/?ak="
