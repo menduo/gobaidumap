@@ -61,7 +61,6 @@ func GetAddressViaIP(address string) (*StructIPToAddress, error) {
 		return res, err
 	}
 	res3 := res2.(*StructIPToAddress)
-	fmt.Println(res3.Content.Address_Detail.City)
 	return res3, nil
 
 }
