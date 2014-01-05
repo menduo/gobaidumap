@@ -40,9 +40,9 @@ func main() {
         fmt.Println(err)
     }
 
-    fmt.Println("从地址到坐标：", addressToGEO)
-    latLngOut := fmt.Sprintf("LAT：%v，Lng：%v", addressToGEO.Result.Location.Lat, addressToGEO.Result.Location.Lng)
-    fmt.Println("从地址到坐标：", latLngOut)
+    fmt.Println("从地址到坐标 - All", addressToGEO)
+    fmt.Println("从地址到坐标 - Lat", addressToGEO.Result.Location.Lat)
+    fmt.Println("从地址到坐标 - Lng", addressToGEO.Result.Location.Lng)
 
     // 从IP到地址
     ipAddress := "202.198.16.3"
@@ -55,5 +55,6 @@ func main() {
     fmt.Println("从IP到地址 - 地址：", IPToAddress, IPToAddress.Content.Address)
 
 }
+
 
 ```
