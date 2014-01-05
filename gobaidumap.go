@@ -41,7 +41,7 @@ func GetAddressViaGEO(lat, lng string) (*StructGEOToAddress, error) {
 func GetGeoViaAddress(address string) (*StructAddressToGEO, error) {
 	res := new(StructAddressToGEO)
 
-	parameter := fmt.Sprintf("&address=%s&output=json&pois=0", address)
+	parameter := fmt.Sprintf("&address=%s&output=json&pois=1", address)
 	reqURL := fmt.Sprintf("%s%s%s", reqURLForGEO, AppKey, parameter)
 
 	res2, err := requestBaidu("GetGeoViaAddress", reqURL)
