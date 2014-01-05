@@ -1,12 +1,12 @@
-baidumap
+gobaidumap
 ========
 
-baidumap 接口调用。支持GEO双向获取，IP定位城市。
+百度地图接口调用 golang 版。支持GEO、地址双向获取，IP定位城市。
 
 # 安装/更新
 
 ```
-go get -u github.com/shajiquan/baidumap
+go get -u github.com/shajiquan/gobaidumap
 ```
 
 # 使用
@@ -16,7 +16,7 @@ package main
 
 import (
     "fmt"
-    "github.com/shajiquan/baidumap"
+    "github.com/shajiquan/gobaidumap"
 )
 
 func main() {
