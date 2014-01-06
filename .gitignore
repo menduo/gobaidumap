@@ -1,3 +1,7 @@
+# Added by Sha Jiquan
+_tests/
+examples/main
+
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a

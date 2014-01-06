@@ -6,8 +6,10 @@ type StructGEOToAddress struct {
 }
 
 type GEOToAddressInner struct {
+	Business          string                 `json:"business"`
 	Formatted_Address string                 `json:"formatted_address"`
 	AddressComponent  *GEOToAddressComponent `json:"addressComponent"`
+	Pois              []*GEOToAddressPois    `json:"pois"`
 }
 
 type GEOToAddressComponent struct {
@@ -17,6 +19,24 @@ type GEOToAddressComponent struct {
 	Street   string `json:"street"`
 }
 
+type GEOToAddressPois struct {
+	Addr     string                   `json:"addr"`
+	Cp       string                   `json:"cp"`
+	Distance string                   `json:"distance"`
+	Name     string                   `json:"name"`
+	PoiType  string                   `json:"poiType"`
+	Point    []*GEOToAddressPoisPoint `json:"point"`
+	Tel      string                   `json:"tel"`
+	Uid      string                   `json:"uid"`
+	Zip      string                   `json:"zip"`
+}
+
+type GEOToAddressPoisPoint struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}
+
+// Address to GEO
 type StructAddressToGEO struct {
 	Status int64              `json:"status"`
 	Result *AddressToGEOInner `json:"result"`
