@@ -62,8 +62,10 @@ func main() {
 
 ```
 
-# 联系楼主
+# 联系 &  反馈
 
 ```
 shajiquan at gmail dot com
+
+https://github.com/shajiquan/gobaidumap/issues/1
 ```
