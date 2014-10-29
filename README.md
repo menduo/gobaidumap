@@ -3,6 +3,12 @@ gobaidumap
 
 百度地图接口调用 golang 版。支持GEO、地址双向获取，IP获取地址。
 
+外国 IP 什么的，百度不支持。
+
+练习 golang 时写的，见笑啦！
+
+感谢 [@zzdboy](https://github.com/zzdboy) 的测试的反馈！
+
 # 安装/更新
 
 ```
@@ -32,20 +38,24 @@ func main() {
 
     if err != nil {
         fmt.Println(err)
+    } else {
+        fmt.Println("坐标到地址：", GEOToAddress)
+        fmt.Println("坐标到地址 - 地址", GEOToAddress.Result.AddressComponent)
+        fmt.Println("\n")
     }
-    fmt.Println("坐标到地址：", GEOToAddress)
-    fmt.Println("坐标到地址 - 地址", GEOToAddress.Result.AddressComponent)
 
     // 从地址到坐标
     address := "百度大厦"
     addressToGEO, err := baidumap.GetGeoViaAddress(address)
     if err != nil {
         fmt.Println(err)
-    }
+    } else {
 
-    fmt.Println("从地址到坐标 - All", addressToGEO)
-    fmt.Println("从地址到坐标 - Lat", addressToGEO.Result.Location.Lat)
-    fmt.Println("从地址到坐标 - Lng", addressToGEO.Result.Location.Lng)
+        fmt.Println("从地址到坐标 - All", addressToGEO)
+        fmt.Println("从地址到坐标 - Lat", addressToGEO.Result.Location.Lat)
+        fmt.Println("从地址到坐标 - Lng", addressToGEO.Result.Location.Lng)
+        fmt.Println("\n")
+    }
 
     // 从IP到地址
     ipAddress := "202.198.16.3"
@@ -53,10 +63,24 @@ func main() {
 
     if err != nil {
         fmt.Println(err)
+    } else {
+        fmt.Println("从IP到地址：", IPToAddress)
+        fmt.Println("从IP到地址 - 地址：", IPToAddress, IPToAddress.Content.Address)
+        fmt.Println("\n")
     }
-    fmt.Println("从IP到地址：", IPToAddress)
-    fmt.Println("从IP到地址 - 地址：", IPToAddress, IPToAddress.Content.Address)
 
+    // 从IP到地址
+    ipAddress = "8.8.8.8"
+    IPToAddress, err = baidumap.GetAddressViaIP(ipAddress)
+
+    if err != nil {
+        fmt.Println("从IP到地址，err !=nil：", err)
+        fmt.Println("\n")
+    } else {
+        fmt.Println("从IP到地址：", IPToAddress)
+        fmt.Println("从IP到地址 - 地址：", IPToAddress, IPToAddress.Content.Address)
+        fmt.Println("\n")
+    }
 }
 
 
