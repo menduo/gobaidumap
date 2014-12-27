@@ -12,7 +12,7 @@ gobaidumap
 # 安装/更新
 
 ```
-go get -u [github.com/shajiquan/gobaidumap](https://github.com/shajiquan/gobaidumap)
+go get -u github.com/shajiquan/gobaidumap
 ```
 
 # 注意
@@ -88,11 +88,11 @@ func main() {
 
 # 联系 &  反馈
 
-```
+
 shajiquan at gmail dot com
 
 [https://github.com/shajiquan/gobaidumap/issues/1](https://github.com/shajiquan/gobaidumap/issues/1)
-```
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shajiquan/gobaidumap/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
