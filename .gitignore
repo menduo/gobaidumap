@@ -24,3 +24,5 @@ _cgo_export.*
 _testmain.go
 
 *.exe
+_test*
+.gopmfile
