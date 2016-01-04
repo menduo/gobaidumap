@@ -7,11 +7,11 @@ type StructGEOToAddress struct {
 	// Status 状态码
 	Status int64 `json:"status"`
 	// Result
-	Result *struct {
+	Result struct {
 		Business string `json:"business"`
 		// FormattedAddress 格式化地址
 		FormattedAddress string `json:"formatted_address"`
-		AddressComponent *struct {
+		AddressComponent struct {
 			City     string `json:"city"`
 			District string `json:"district"`
 			Province string `json:"province"`
@@ -28,7 +28,7 @@ type geoToAddressPois struct {
 	Distance string `json:"distance"`
 	Name     string `json:"name"`
 	PoiType  string `json:"poiType"`
-	Point    []*struct {
+	Point    []struct {
 		X float64 `json:"x"`
 		Y float64 `json:"y"`
 	} `json:"point"`
@@ -40,8 +40,8 @@ type geoToAddressPois struct {
 // StructAddressToGEO 地址到 GEO 坐标 结构体
 type StructAddressToGEO struct {
 	Status int64 `json:"status"`
-	Result *struct {
-		Location *struct {
+	Result struct {
+		Location struct {
 			Lng float64 `json:"lng"`
 			Lat float64 `json:"lat"`
 		} `json:"location"`
@@ -55,16 +55,16 @@ type StructAddressToGEO struct {
 // StructIPToAddress IP 到 地址
 type StructIPToAddress struct {
 	Address string `json:"address"`
-	Content *struct {
+	Content struct {
 		Address       string `json:"address"`
-		AddressDetail *struct {
+		AddressDetail struct {
 			City         string `json:"city"`
 			CityCode     int64  `json:"city_code"`
 			District     string `json:"district"`
 			Province     string `json:"province"`
 			Street       string `json:"street"`
 			StreetNumber string `json:"street_number"`
-			Point        *struct {
+			Point        struct {
 				X string `json:"x"`
 				Y string `json:"y"`
 			} `json:"point"`
