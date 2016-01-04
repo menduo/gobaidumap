@@ -91,7 +91,7 @@ func main() {
 
 shajiquan at gmail dot com
 
-[https://github.com/shajiquan/gobaidumap/issues/1](https://github.com/shajiquan/gobaidumap/issues/1)
+[https://github.com/shajiquan/gobaidumap/issues](https://github.com/shajiquan/gobaidumap/issues)
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shajiquan/gobaidumap/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
