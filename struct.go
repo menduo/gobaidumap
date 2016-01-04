@@ -1,84 +1,75 @@
-package baidumap
+package gobaidumap
 
+// 为百度 API 返回的 JSON 创建结构体
+
+// StructGEOToAddress GEO到地址
 type StructGEOToAddress struct {
-    Status int64              `json:"status"`
-    Result *GEOToAddressInner `json:"result"`
-    Msg    string             `json:"msg"`
+	// Status 状态码
+	Status int64 `json:"status"`
+	// Result
+	Result *struct {
+		Business string `json:"business"`
+		// FormattedAddress 格式化地址
+		FormattedAddress string `json:"formatted_address"`
+		AddressComponent *struct {
+			City     string `json:"city"`
+			District string `json:"district"`
+			Province string `json:"province"`
+			Street   string `json:"street"`
+		} `json:"addressComponent"`
+		Pois []*geoToAddressPois `json:"pois"`
+	} `json:"result"`
+	Msg string `json:"msg"`
 }
 
-type GEOToAddressInner struct {
-    Business          string                 `json:"business"`
-    Formatted_Address string                 `json:"formatted_address"`
-    AddressComponent  *GEOToAddressComponent `json:"addressComponent"`
-    Pois              []*GEOToAddressPois    `json:"pois"`
+type geoToAddressPois struct {
+	Addr     string `json:"addr"`
+	Cp       string `json:"cp"`
+	Distance string `json:"distance"`
+	Name     string `json:"name"`
+	PoiType  string `json:"poiType"`
+	Point    []*struct {
+		X float64 `json:"x"`
+		Y float64 `json:"y"`
+	} `json:"point"`
+	Tel string `json:"tel"`
+	UID string `json:"uid"`
+	Zip string `json:"zip"`
 }
 
-type GEOToAddressComponent struct {
-    City     string `json:"city"`
-    District string `json:"district"`
-    Province string `json:"province"`
-    Street   string `json:"street"`
-}
-
-type GEOToAddressPois struct {
-    Addr     string                   `json:"addr"`
-    Cp       string                   `json:"cp"`
-    Distance string                   `json:"distance"`
-    Name     string                   `json:"name"`
-    PoiType  string                   `json:"poiType"`
-    Point    []*GEOToAddressPoisPoint `json:"point"`
-    Tel      string                   `json:"tel"`
-    Uid      string                   `json:"uid"`
-    Zip      string                   `json:"zip"`
-}
-
-type GEOToAddressPoisPoint struct {
-    X   float64 `json:"x"`
-    Y   float64 `json:"y"`
-}
-
-// Address to GEO
+// StructAddressToGEO 地址到 GEO 坐标 结构体
 type StructAddressToGEO struct {
-    Status int64              `json:"status"`
-    Result *AddressToGEOInner `json:"result"`
-    Msg    string             `json:"msg"`
+	Status int64 `json:"status"`
+	Result *struct {
+		Location *struct {
+			Lng float64 `json:"lng"`
+			Lat float64 `json:"lat"`
+		} `json:"location"`
+		Precise    int64  `json:"precise" `
+		Confidence int64  `json:"confidence" `
+		Level      string `json:"level" `
+	} `json:"result"`
+	Msg string `json:"msg"`
 }
 
-type AddressToGEOInner struct {
-    Location   *AddressToGEOInnerGeo `json:"location"`
-    Precise    int64                 `json:"precise" `
-    Confidence int64                 `json:"confidence" `
-    Level      string                `json:"level" `
-}
-
-type AddressToGEOInnerGeo struct {
-    Lng float64 `json:"lng"`
-    Lat float64 `json:"lat"`
-}
-
+// StructIPToAddress IP 到 地址
 type StructIPToAddress struct {
-    Address string                         `json:"address"`
-    Content *IPToAddressResultInnerContent `json:"content"`
-    Status  int64                          `json:"status"`
-    Message string                         `json:"message"`
-}
-
-type IPToAddressResultInnerContent struct {
-    Address        string                                      `json:"address"`
-    Address_Detail *IPToAddressResultInnerContentAddressDetail `json:"address_detail"`
-}
-
-type IPToAddressResultInnerContentAddressDetail struct {
-    City          string                                           `json:"city"`
-    City_Code     int64                                            `json:"city_code"`
-    District      string                                           `json:"district"`
-    Province      string                                           `json:"province"`
-    Street        string                                           `json:"street"`
-    Street_Number string                                           `json:"street_number"`
-    Point         *IPToAddressResultInnerContentAddressDetailPoint `json:"point"`
-}
-
-type IPToAddressResultInnerContentAddressDetailPoint struct {
-    X   string `json:"x"`
-    Y   string `json:"y"`
+	Address string `json:"address"`
+	Content *struct {
+		Address       string `json:"address"`
+		AddressDetail *struct {
+			City         string `json:"city"`
+			CityCode     int64  `json:"city_code"`
+			District     string `json:"district"`
+			Province     string `json:"province"`
+			Street       string `json:"street"`
+			StreetNumber string `json:"street_number"`
+			Point        *struct {
+				X string `json:"x"`
+				Y string `json:"y"`
+			} `json:"point"`
+		} `json:"address_detail"`
+	} `json:"content"`
+	Status  int64  `json:"status"`
+	Message string `json:"message"`
 }
