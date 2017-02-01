@@ -12,7 +12,7 @@ gobaidumap
 # 安装/更新
 
 ```
-go get -u github.com/shajiquan/gobaidumap
+go get -u github.com/menduo/gobaidumap
 ```
 
 # 注意
@@ -25,7 +25,7 @@ package main
 
 import (
     "fmt"
-    "github.com/shajiquan/gobaidumap"
+    "github.com/menduo/gobaidumap"
 )
 
 func main() {
@@ -89,10 +89,9 @@ func main() {
 # 联系 &  反馈
 
 
-shajiquan at gmail dot com
+shimenduo at gmail dot com
 
-[https://github.com/shajiquan/gobaidumap/issues](https://github.com/shajiquan/gobaidumap/issues)
+[https://github.com/menduo/gobaidumap/issues](https://github.com/menduo/gobaidumap/issues)
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shajiquan/gobaidumap/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

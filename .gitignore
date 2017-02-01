@@ -1,6 +1,8 @@
 # Added by Sha Jiquan
 _tests/
 examples/main
+_locals/
+_deving/
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
