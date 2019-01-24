@@ -10,8 +10,10 @@ func main() {
 	lat := "40.069462"
 	lng := "116.346364"
 
+	bc := gobaidumap.NewBaiduMapClient(gobaidumap.GetDefaultAK())
+
 	// 从坐标到地址
-	GEOToAddress, err := gobaidumap.GetAddressViaGEO(lat, lng)
+	GEOToAddress, err := bc.GetAddressViaGEO(lat, lng)
 
 	if err != nil {
 		fmt.Println(err)
